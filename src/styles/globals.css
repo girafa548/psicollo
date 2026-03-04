@@ -1,9 +1,35 @@
 @import "tailwindcss";
 
+/* VSCode: Unknown at rule @theme (Tailwind v4 standard) */
+@theme {
+    --color-ivory: #F5F0EB;
+    --color-stone: #E8E0D5;
+    --color-blush: #C9A99A;
+    --color-sage: #6B8C7A;
+    --color-forest: #2E4E3F;
+    --color-gold: #C5A059;
+    --color-black: #1A1A1A;
+
+    --font-serif: var(--font-cormorant), serif;
+    --font-sans: var(--font-dm-sans), sans-serif;
+
+    --animate-float: float 6s ease-in-out infinite;
+
+    @keyframes float {
+
+        0%,
+        100% {
+            transform: translateY(0);
+        }
+
+        50% {
+            transform: translateY(-15px);
+        }
+    }
+}
+
 /* 
-  PROJETO PSICOLLO - CONFIGURAÇÃO LIMPA E SEM AVISOS
-  Para garantir que seu editor não mostre nenhum erro, 
-  esta configuração usa CSS puro e Tailwind Tradicional.
+  PROJETO PSICOLLO - CONFIGURAÇÃO LIMPA 
 */
 
 :root {
@@ -96,19 +122,6 @@ body {
     overflow: hidden;
 }
 
-/* Animações Flutuantes */
-@keyframes float {
-
-    0%,
-    100% {
-        transform: translateY(0);
-    }
-
-    50% {
-        transform: translateY(-15px);
-    }
-}
-
 .animate-float {
-    animation: float 6s ease-in-out infinite;
+    animation: var(--animate-float);
 }
