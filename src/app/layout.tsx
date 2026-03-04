@@ -4,19 +4,20 @@ import '../styles/globals.css'
 
 const cormorant = Cormorant_Garamond({
     subsets: ['latin'],
-    weight: ['300', '400', '500', '600', '700'],
-    variable: '--font-cormorant',
+    weight: ['300', '400', '500'],
+    style: ['normal', 'italic'],
+    variable: '--font-display',
 })
 
 const dmSans = DM_Sans({
     subsets: ['latin'],
     weight: ['300', '400', '500', '700'],
-    variable: '--font-dm-sans',
+    variable: '--font-body',
 })
 
 export const metadata: Metadata = {
-    title: 'Psicollo | Psicologia Humanizada e Neuropsicologia',
-    description: 'Um espaço de escuta, cuidado e transformação. Descubra sua melhor versão através de uma abordagem humanizada.',
+    title: 'psyka | Neuropsicologia & Psicoterapia Breve',
+    description: 'A sua mente já sabe o que precisa mudar. Descubra sua melhor versão através de uma abordagem humanizada e científica.',
     icons: {
         icon: '/logo-icon.png',
     }
@@ -29,7 +30,7 @@ export default function RootLayout({
 }) {
     return (
         <html lang="pt-BR" suppressHydrationWarning>
-            <body className={`${cormorant.variable} ${dmSans.variable} antialiased`}>
+            <body className={`${cormorant.variable} ${dmSans.variable} grain relative antialiased`}>
                 {children}
             </body>
         </html>

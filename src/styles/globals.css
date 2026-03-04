@@ -1,17 +1,17 @@
 @import "tailwindcss";
 
-/* VSCode: Unknown at rule @theme (Tailwind v4 standard) */
 @theme {
-    --color-ivory: #F5F0EB;
-    --color-stone: #E8E0D5;
+    --color-bg: #F5F0EB;
+    --color-surface: #E8E0D5;
     --color-blush: #C9A99A;
     --color-sage: #6B8C7A;
-    --color-forest: #2E4E3F;
-    --color-gold: #C5A059;
-    --color-black: #1A1A1A;
+    --color-primary: #2E4E3F;
+    --color-accent: #A0705E;
+    --color-midnight: #0F1A17;
+    --color-gold: #D4B996;
 
-    --font-serif: var(--font-cormorant), serif;
-    --font-sans: var(--font-dm-sans), sans-serif;
+    --font-display: var(--font-display), serif;
+    --font-body: var(--font-body), sans-serif;
 
     --animate-float: float 6s ease-in-out infinite;
 
@@ -29,99 +29,113 @@
 }
 
 /* 
-  PROJETO PSICOLLO - CONFIGURAÇÃO LIMPA 
+  PSYKA LUXURY DESIGN SYSTEM - NO @APPLY WARNINGS
 */
 
 :root {
-    --color-ivory: #F5F0EB;
-    --color-stone: #E8E0D5;
+    --color-bg: #F5F0EB;
+    --color-surface: #E8E0D5;
     --color-blush: #C9A99A;
     --color-sage: #6B8C7A;
-    --color-forest: #2E4E3F;
-    --color-gold: #C5A059;
-    --color-black: #1A1A1A;
+    --color-primary: #2E4E3F;
+    --color-accent: #A0705E;
+    --color-midnight: #0F1A17;
+    --color-gold: #D4B996;
+    --color-text: #0F1A17;
+    --color-muted: #3D3D3D;
 }
 
-/* Configurações Globais do HTML */
 html {
     scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
 }
 
 body {
-    background-color: var(--color-ivory);
-    color: rgba(26, 26, 26, 0.9);
-    font-family: var(--font-dm-sans), sans-serif;
-    -webkit-font-smoothing: antialiased;
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    font-family: var(--font-body), sans-serif;
+    font-weight: 300;
+    line-height: 1.75;
     overflow-x: hidden;
 }
 
-/* Glassmorphism Puro */
+/* Luxury Grain Texture */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.04;
+    pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+    z-index: 50;
+}
+
 .glass {
     background: rgba(245, 240, 235, 0.7);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
-    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    border-bottom: 1px solid rgba(46, 78, 63, 0.05);
 }
 
-/* Botão Primário Premium */
-.btn-primary {
-    background: var(--color-forest);
-    color: #FFFFFF;
-    padding: 1.25rem 2.5rem;
-    border-radius: 9999px;
-    font-weight: 700;
-    font-size: 10px;
-    text-transform: uppercase;
-    letter-spacing: 0.3em;
-    transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    border: none;
-    box-shadow: 0 20px 40px -10px rgba(46, 78, 63, 0.2);
-    cursor: pointer;
-}
-
-.btn-primary:hover {
-    background: var(--color-sage);
-    transform: translateY(-4px);
-    box-shadow: 0 30px 60px -15px rgba(46, 78, 63, 0.3);
-}
-
-.btn-primary:active {
-    transform: scale(0.95);
-}
-
-/* Botão Secundário Premium */
-.btn-secondary {
-    border: 1px solid var(--color-forest);
-    color: var(--color-forest);
-    padding: 1.25rem 2.5rem;
-    border-radius: 9999px;
-    font-weight: 700;
-    font-size: 10px;
-    text-transform: uppercase;
-    letter-spacing: 0.3em;
-    transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    background: transparent;
-    cursor: pointer;
-}
-
-.btn-secondary:hover {
-    background: var(--color-forest);
+/* Premium Buttons - Standard CSS to avoid @apply warnings */
+.btn-terracotta {
+    background-color: var(--color-accent);
     color: white;
+    padding: 1.25rem 2.5rem;
+    border-radius: 9999px;
+    font-size: 13px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+    box-shadow: 0 20px 40px -10px rgba(160, 112, 94, 0.3);
+    cursor: pointer;
+    border: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-terracotta:hover {
     transform: translateY(-4px);
+    filter: brightness(1.1);
+    box-shadow: 0 30px 60px -15px rgba(160, 112, 94, 0.4);
 }
 
-/* Classes Utilitárias */
-.image-container {
-    position: relative;
-    overflow: hidden;
+.btn-outline-forest {
+    border: 1px solid var(--color-primary);
+    color: var(--color-primary);
+    padding: 1.25rem 2.5rem;
+    border-radius: 9999px;
+    font-size: 13px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    background-color: transparent;
+    transition: all 0.5s ease;
+    cursor: pointer;
 }
 
-.animate-float {
-    animation: var(--animate-float);
+.btn-outline-forest:hover {
+    background-color: var(--color-primary);
+    color: white;
+}
+
+/* Custom Typography spacing */
+h1,
+h2,
+h3 {
+    letter-spacing: -0.04em;
+    font-weight: 300;
+}
+
+.label-tag {
+    font-size: 11px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--color-muted);
 }

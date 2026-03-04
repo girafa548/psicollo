@@ -1,54 +1,61 @@
 "use client"
 
-import Image from 'next/image'
-import { Instagram, Linkedin } from 'lucide-react'
-import { INSTAGRAM_URL, LINKEDIN_URL, CONTACT_EMAIL } from '@/lib/constants'
+import { Instagram, Linkedin, MessageCircle, Send } from 'lucide-react'
 
 export function Footer() {
     return (
-        <footer id="contato" className="bg-stone/10 py-40 border-t border-stone/20">
-            <div className="max-w-7xl mx-auto px-6">
-                <div className="flex flex-col md:flex-row justify-between items-center gap-20 pb-32 border-b border-black/5">
-                    <div className="max-w-md text-center md:text-left">
-                        <span className="font-serif text-5xl font-medium mb-10 block tracking-tighter">Psicollo</span>
-                        <p className="text-2xl font-sans font-light text-black/40 leading-relaxed">
-                            Redefinindo o futuro da sua saúde mental através da precisão da ciência e suavidade do acolher.
+        <footer className="bg-bg py-48 border-t border-surface relative overflow-hidden">
+            {/* Subtlest ivory detail */}
+            <div className="absolute inset-0 opacity-[0.02] pointer-events-none select-none" style={{ backgroundImage: 'radial-gradient(circle at 1.5px 1.5px, #1A2E28 1px, transparent 0)', backgroundSize: '50px 50px' }} />
+
+            <div className="max-w-7xl mx-auto px-8 relative z-10">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-24 lg:gap-32 pb-32 border-b border-surface/50">
+                    <div className="space-y-10">
+                        <a href="#" className="font-display italic text-[32px] text-midnight lowercase tracking-tight">
+                            psyka
+                        </a>
+                        <p className="font-sans text-[13px] text-muted max-w-xs leading-relaxed uppercase tracking-widest font-medium opacity-60">
+                            Neuropsicologia para um melhor você.
                         </p>
                     </div>
-                    <div className="flex flex-col items-center md:items-end gap-10">
-                        <h4 className="font-sans text-[10px] font-black uppercase tracking-[0.5em] text-black/20">Redes Sociais</h4>
-                        <div className="flex gap-8">
-                            <a
-                                href={INSTAGRAM_URL}
-                                className="w-16 h-16 rounded-full bg-white flex items-center justify-center shadow-xl hover:bg-forest hover:text-white transition-all duration-500 scale-110 hover:-translate-y-2"
-                            >
-                                <Instagram size={28} />
-                            </a>
-                            <a
-                                href={LINKEDIN_URL}
-                                className="w-16 h-16 rounded-full bg-white flex items-center justify-center shadow-xl hover:bg-forest hover:text-white transition-all duration-500 scale-110 hover:-translate-y-2"
-                            >
-                                <Linkedin size={28} />
-                            </a>
-                            <a
-                                href={`mailto:${CONTACT_EMAIL}`}
-                                className="w-16 h-16 rounded-full bg-white flex items-center justify-center shadow-xl hover:bg-forest hover:text-white transition-all duration-500 scale-110 hover:-translate-y-2"
-                            >
-                                <Instagram size={28} /> {/* Using Instagram as placeholder for X if needed or email icon */}
-                            </a>
+
+                    <div className="space-y-10">
+                        <h4 className="font-sans text-[11px] font-black uppercase tracking-[0.2em] text-midnight/40">Navegar</h4>
+                        <div className="flex flex-col gap-6 font-display text-2xl text-midnight/80">
+                            {['Sobre', 'Mapas', 'Abordagem', 'Contato'].map((item) => (
+                                <a key={item} href={`#${item.toLowerCase()}`} className="hover:text-accent transition-colors">
+                                    {item}
+                                </a>
+                            ))}
+                        </div>
+                    </div>
+
+                    <div className="space-y-10">
+                        <h4 className="font-sans text-[11px] font-black uppercase tracking-[0.2em] text-midnight/40">Mapas</h4>
+                        <div className="flex flex-col gap-6 font-display text-2xl text-midnight/80">
+                            {['Mapa Financeiro', 'Love Map', 'Ciclos Repetitivos'].map((item) => (
+                                <a key={item} href="#mapas" className="hover:text-accent transition-colors">
+                                    {item}
+                                </a>
+                            ))}
+                        </div>
+                    </div>
+
+                    <div className="space-y-12">
+                        <div className="space-y-10">
+                            <h4 className="font-sans text-[11px] font-black uppercase tracking-[0.2em] text-midnight/40">Contato</h4>
+                            <div className="flex flex-col gap-6 font-sans text-xl text-midnight/80">
+                                <a href="https://instagram.com/psykaoficial" target="_blank" className="hover:text-accent transition-colors">@psykaoficial</a>
+                                <a href="mailto:contato@psyka.com.br" className="hover:text-accent transition-colors">contato@psyka.com.br</a>
+                                <a href="https://wa.me/11XXXXXXXXX" className="hover:text-accent transition-colors">WhatsApp: (11) XXXXX-XXXX</a>
+                            </div>
                         </div>
                     </div>
                 </div>
 
-                <div className="pt-20 flex flex-col md:flex-row justify-between items-center gap-10">
-                    <p className="text-[10px] font-black uppercase tracking-[0.6em] text-black/10">
-                        © 2026 Psicollo Global Clinic. All Rights Reserved.
-                    </p>
-                    <div className="flex gap-10 text-[10px] font-black uppercase tracking-[0.6em] text-black/10">
-                        <span>Ethics</span>
-                        <span>Care</span>
-                        <span>Science</span>
-                    </div>
+                <div className="pt-24 flex flex-col md:flex-row justify-between items-center gap-12 opacity-30 text-[9px] font-medium uppercase tracking-[0.6em] text-muted">
+                    <p>© 2024 Psyka · Todos os direitos reservados</p>
+                    <p>CRP XX/XXXXX</p>
                 </div>
             </div>
         </footer>

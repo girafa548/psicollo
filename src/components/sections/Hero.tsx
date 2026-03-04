@@ -1,65 +1,125 @@
 "use client"
 
-import Image from 'next/image'
-import { motion } from 'framer-motion'
-import { ArrowRight, Leaf } from 'lucide-react'
+import { useState, useEffect } from 'react'
+import { motion, useMotionValue, useSpring } from 'framer-motion'
 import { FadeIn } from '@/components/FadeIn'
+import { ArrowRight } from 'lucide-react'
 
 interface HeroProps {
     onOpenFunnel: () => void;
 }
 
-export function Hero({ onOpenFunnel }: HeroProps) {
+interface ParticleProps {
+    p: { size: number; x: number; y: number; mass: number };
+    mouseX: any;
+    mouseY: any;
+}
+
+function Particle({ p, mouseX, mouseY }: ParticleProps) {
+    const x = useSpring(mouseX, { damping: 20 * p.mass, stiffness: 100 })
+    const y = useSpring(mouseY, { damping: 20 * p.mass, stiffness: 100 })
+
     return (
-        <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-            <div className="absolute inset-0 z-0">
-                <Image
-                    src="/images/neutral_brain.png"
-                    alt="Neural Essence"
-                    fill
-                    className="object-cover brightness-[0.3] scale-110 motion-safe:animate-[pulse_10s_infinite_ease-in-out]"
-                    priority
-                />
-                <div className="absolute inset-0 bg-gradient-to-b from-black/0 via-forest/10 to-ivory"></div>
+        <motion.div
+            className="absolute rounded-full bg-sage opacity-[0.2]"
+            style={{
+                width: p.size,
+                height: p.size,
+                left: `${p.x}%`,
+                top: `${p.y}%`,
+                x,
+                y
+            }}
+        />
+    )
+}
+
+export function Hero({ onOpenFunnel }: HeroProps) {
+    const [mounted, setMounted] = useState(false)
+    const [particles, setParticles] = useState<{ id: number; size: number; x: number; y: number; mass: number }[]>([])
+    const mouseX = useMotionValue(0)
+    const mouseY = useMotionValue(0)
+
+    useEffect(() => {
+        setMounted(true)
+        const newParticles = Array.from({ length: 15 }).map((_, i) => ({
+            id: i,
+            size: Math.random() * 8 + 4,
+            x: Math.random() * 100,
+            y: Math.random() * 100,
+            mass: Math.random() * 0.5 + 0.1
+        }))
+        setParticles(newParticles)
+    }, [])
+
+    const handleMouseMove = (e: React.MouseEvent) => {
+        const { clientX, clientY } = e
+        const moveX = (clientX - window.innerWidth / 2) * 0.05
+        const moveY = (clientY - window.innerHeight / 2) * 0.05
+        mouseX.set(moveX)
+        mouseY.set(moveY)
+    }
+
+    return (
+        <section
+            onMouseMove={handleMouseMove}
+            className="relative min-h-[100svh] flex items-center justify-center overflow-hidden bg-bg"
+        >
+            {/* Antigravity Particles Field */}
+            <div className="absolute inset-0 pointer-events-none z-0">
+                {mounted && particles.map((p) => (
+                    <Particle key={p.id} p={p} mouseX={mouseX} mouseY={mouseY} />
+                ))}
             </div>
 
-            <div className="max-w-6xl mx-auto px-6 relative z-10 text-center text-white">
+            {/* Depth Divider Line */}
+            <div className="absolute bottom-0 right-0 w-full h-[1px] bg-surface/50 rotate-[-5deg] origin-right translate-y-[-20vh] hidden md:block" />
+
+            <div className="max-w-7xl mx-auto px-6 sm:px-8 relative z-10 text-center md:text-left pt-20">
                 <FadeIn direction="up">
-                    <div className="inline-flex items-center gap-3 px-6 py-2 rounded-full border border-white/20 bg-white/5 backdrop-blur-md mb-12">
-                        <Leaf size={16} className="text-sage" />
-                        <span className="font-sans text-[9px] font-black uppercase tracking-[0.5em] text-white/50">Psicologia Baseada em Evidências</span>
-                    </div>
-                    <h1 className="text-7xl md:text-[140px] font-serif leading-[0.85] mb-12 tracking-tighter">
-                        A Nossa Abordagem <br />
-                        <span className="italic font-light text-sage drop-shadow-[0_0_20px_rgba(107,140,122,0.3)]">Transformadora.</span>
+                    <span className="label-tag mb-8 md:mb-12 block text-primary font-bold">
+                        Neuropsicologia · São Paulo
+                    </span>
+
+                    <h1 className="font-display text-5xl sm:text-6xl md:text-8xl lg:text-[100px] text-midnight mb-8 md:mb-12 leading-[1.05] tracking-tight">
+                        A sua mente <br />
+                        já sabe o que <br />
+                        <span className="italic-accent italic !text-accent opacity-100">precisa mudar.</span>
                     </h1>
-                    <p className="font-sans text-xl md:text-2xl text-white/70 max-w-3xl mx-auto mb-20 leading-relaxed font-light">
-                        Na Psicollo, desenvolvemos uma metodologia enraizada na neuropsicologia para ajudar você a resolver problemas subjacentes e eliminar a névoa mental que impede o seu progresso.
+
+                    <p className="font-sans text-lg md:text-xl lg:text-2xl text-midnight/70 max-w-2xl mb-12 md:mb-20 leading-relaxed font-light">
+                        Psicoterapia breve e focada, guiada pela neurociência, <br className="hidden lg:block" />
+                        para quem quer entender seus padrões — e finalmente sair deles.
                     </p>
-                    <div className="flex flex-col sm:flex-row gap-8 justify-center items-center">
+
+                    <div className="flex flex-col sm:flex-row gap-8 items-center lg:items-start">
                         <button
                             onClick={onOpenFunnel}
-                            className="btn-primary !px-16 !py-7 !text-[12px] group"
+                            className="btn-terracotta !px-12 !py-6 group"
                         >
-                            Começar Minha Jornada
-                            <ArrowRight size={20} className="ml-4 transition-transform group-hover:translate-x-3" />
+                            Quero entender meus padrões
+                            <ArrowRight size={20} className="ml-5 transition-transform group-hover:translate-x-3 duration-500" />
                         </button>
-                        <a
-                            href="#sobre"
-                            className="font-sans text-[11px] font-black uppercase tracking-[0.4em] text-white/50 hover:text-white transition-all underline underline-offset-[12px] decoration-white/10"
-                        >
-                            Descubra Mais
-                        </a>
+                        <button className="btn-outline-forest !px-12 !py-6">
+                            Conhecer os Mapas
+                        </button>
                     </div>
                 </FadeIn>
             </div>
 
-            <div className="absolute bottom-16 left-1/2 -translate-x-1/2 flex flex-col items-center gap-4 opacity-30">
-                <span className="uppercase tracking-[0.6em] text-[8px] font-black">Scroll</span>
+            {/* Corner Quote */}
+            <div className="absolute bottom-20 right-10 md:right-20 text-right opacity-30 italic font-display text-lg text-blush max-w-xs transition-opacity hover:opacity-100">
+                "Os mesmos mecanismos que influenciam o consumo <br />
+                estruturam nossos relacionamentos."
+            </div>
+
+            {/* Scroll Indicator */}
+            <div className="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-4 opacity-20">
+                <span className="uppercase tracking-[0.4em] text-[10px] font-medium text-midnight">Scroll</span>
                 <motion.div
                     animate={{ y: [0, 10, 0] }}
-                    transition={{ repeat: Infinity, duration: 2 }}
-                    className="w-[1px] h-16 bg-white"
+                    transition={{ repeat: Infinity, duration: 2.5 }}
+                    className="w-[1px] h-12 bg-midnight"
                 />
             </div>
         </section>

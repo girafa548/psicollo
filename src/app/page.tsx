@@ -2,43 +2,34 @@
 
 import { useState } from 'react'
 import dynamic from 'next/dynamic'
-import { Navbar } from '@/components/layout/Navbar'
-import { Footer } from '@/components/layout/Footer'
+import { Nav } from '@/components/layout/Nav'
 import { Hero } from '@/components/sections/Hero'
-import WhatsAppButton from '@/components/WhatsAppButton'
+import { Sobre } from '@/components/sections/Sobre'
+import { Mapas } from '@/components/sections/Mapas'
+import { Metodologia } from '@/components/sections/Metodologia'
+import { Depoimentos } from '@/components/sections/Depoimentos'
+import { CTAFinal } from '@/components/sections/CTAFinal'
+import { Footer } from '@/components/layout/Footer'
 
-// Lazy loaded components for better performance
-const Funnel = dynamic(() => import('@/components/sections/Funnel').then(m => m.Funnel), {
+const Funnel = dynamic(() => import('@/components/sections/Funnel').then(mod => mod.Funnel), {
     ssr: false,
-    loading: () => null
 })
-const About = dynamic(() => import('@/components/sections/About').then(m => m.About))
-const Advantage = dynamic(() => import('@/components/sections/Advantage').then(m => m.Advantage))
-const Professional = dynamic(() => import('@/components/sections/Professional').then(m => m.Professional))
 
 export default function Home() {
     const [isFunnelOpen, setIsFunnelOpen] = useState(false)
 
     return (
-        <main className="min-h-screen bg-ivory selection:bg-forest selection:text-white">
-            <WhatsAppButton />
-
-            <Navbar onOpenFunnel={() => setIsFunnelOpen(true)} />
-
+        <main className="min-h-screen bg-bg antialiased">
+            <Nav />
             <Hero onOpenFunnel={() => setIsFunnelOpen(true)} />
-
-            <About />
-
-            <Advantage />
-
-            <Professional />
-
-            <Funnel
-                isOpen={isFunnelOpen}
-                onClose={() => setIsFunnelOpen(false)}
-            />
-
+            <Sobre />
+            <Mapas />
+            <Metodologia />
+            <Depoimentos />
+            <CTAFinal onOpenFunnel={() => setIsFunnelOpen(true)} />
             <Footer />
+
+            <Funnel isOpen={isFunnelOpen} onClose={() => setIsFunnelOpen(false)} />
         </main>
     )
 }
