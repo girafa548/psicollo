@@ -1,0 +1,126 @@
+[00:00:00.745] Server  LOG     ✓ Ready in 480ms
+[00:00:24.271] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:24.343] Browser WARN    Image with src "/logo-icon.png" has "fill" and parent element with invalid "position". Provided "static" should be one of absolute,fixed,relative.
+[00:00:24.343] Browser WARN    Image with src "/hero-professional.png" has "fill" and parent element with invalid "position". Provided "static" should be one of absolute,fixed,relative.
+[00:00:24.343] Browser WARN    Image with src "/step-1.png" has "fill" and parent element with invalid "position". Provided "static" should be one of absolute,fixed,relative.
+[00:00:24.561] Browser WARN    Image with src "/step-4.png" has "fill" and parent element with invalid "position". Provided "static" should be one of absolute,fixed,relative.
+[00:00:24.561] Browser WARN    Image with src "/step-2.png" has "fill" and parent element with invalid "position". Provided "static" should be one of absolute,fixed,relative.
+[00:00:24.561] Browser WARN    Image with src "/step-3.png" has "fill" and parent element with invalid "position". Provided "static" should be one of absolute,fixed,relative.
+[00:00:24.677] Browser WARN    Image with src "/brain-map.png" has "fill" and parent element with invalid "position". Provided "static" should be one of absolute,fixed,relative.
+[00:00:24.677] Browser WARN    Image with src "/brain-map.png" has "fill" and a height value of 0. This is likely because the parent element of the image has not been styled to have a set height.
+[00:27:38.018] Server  LOG     ✓ Compiled in 1307ms
+[00:09:48.778] Server  LOG     ✓ Compiled in 1391ms
+[00:09:52.328] Server  LOG     ✓ Compiled in 100ms
+[00:27:41.609] Server  LOG     ✓ Compiled in 93ms
+[00:10:15.791] Server  LOG     ✓ Compiled in 511ms
+[00:28:05.287] Server  LOG     ✓ Compiled in 706ms
+[00:28:05.540] Browser ERROR   ./src/lib/constants.ts
+Code generation for chunk item errored
+An error occurred while generating the chunk item [project]/src/lib/constants.ts [app-client] (ecmascript)
+
+Caused by:
+- Failed to restore task data (corrupted database or bug): Meta for <BrowserChunkingContext as ChunkingContext>::module_export_usage (TaskId 138431))
+
+Debug info:
+- An error occurred while generating the chunk item [project]/src/lib/constants.ts [app-client] (ecmascript)
+- Execution of <ModuleChunkItem as EcmascriptChunkItem>::content_with_async_module_info failed
+- Execution of *EcmascriptChunkItemContent::new failed
+- Execution of EcmascriptModuleContent::new failed
+- Failed to restore task data (corrupted database or bug): Meta for <BrowserChunkingContext as ChunkingContext>::module_export_usage (TaskId 138431))
+  
+  Caused by:
+      0: Looking up data for TaskId 138431 from database failed
+      1: Unable to open static sorted file referenced from 00000034.meta
+      2: Unable to open static sorted file 00000031.sst
+      3: No such file or directory (os error 2)
+
+Import traces:
+  Client Component Browser:
+    ./src/lib/constants.ts [Client Component Browser]
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/lib/constants.ts [Client Component SSR]
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+[00:28:06.403] Browser ERROR   ./src/lib/constants.ts
+Code generation for chunk item errored
+An error occurred while generating the chunk item [project]/src/lib/constants.ts [app-client] (ecmascript)
+
+Caused by:
+- Failed to restore task data (corrupted database or bug): Meta for <BrowserChunkingContext as ChunkingContext>::module_export_usage (TaskId 138431))
+
+Debug info:
+- An error occurred while generating the chunk item [project]/src/lib/constants.ts [app-client] (ecmascript)
+- Execution of <ModuleChunkItem as EcmascriptChunkItem>::content_with_async_module_info failed
+- Execution of *EcmascriptChunkItemContent::new failed
+- Execution of EcmascriptModuleContent::new failed
+- Failed to restore task data (corrupted database or bug): Meta for <BrowserChunkingContext as ChunkingContext>::module_export_usage (TaskId 138431))
+  
+  Caused by:
+      0: Looking up data for TaskId 138431 from database failed
+      1: Unable to open static sorted file referenced from 00000034.meta
+      2: Unable to open static sorted file 00000031.sst
+      3: No such file or directory (os error 2)
+
+Import traces:
+  Client Component Browser:
+    ./src/lib/constants.ts [Client Component Browser]
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/lib/constants.ts [Client Component SSR]
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+[00:10:21.072] Server  LOG     ✓ Compiled in 90ms
+[00:10:21.188] Browser ERROR   ./src/components/WhatsAppButton.tsx:12:5
+Parsing ecmascript source code failed
+  10 |     const [showNotification, setShowNotification] = useState(false)
+  11 |
+> 12 |     import { WHATSAPP_NUMBER } from '@/lib/constants'
+     |     ^^^^^^
+  13 |     const message = "Olá! Gostaria de saber mais sobre a psicoterapia na Psicollo."
+  14 |     const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`
+  15 |
+
+'import', and 'export' cannot be used outside of module code
+
+Import traces:
+  Client Component Browser:
+    ./src/components/WhatsAppButton.tsx [Client Component Browser]
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/components/WhatsAppButton.tsx [Client Component SSR]
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+[00:10:36.756] Server  LOG     ✓ Compiled in 421ms
+[00:11:15.688] Server  LOG     ✓ Compiled in 71ms
+[00:12:08.866] Server  LOG     ✓ Compiled in 557ms
+[00:12:09.021] Browser WARN    Image with src "/logo-icon.png" has "fill" and a height value of 0. This is likely because the parent element of the image has not been styled to have a set height.
+[00:12:09.021] Browser WARN    Image with src "/hero-professional.png" has "fill" and a height value of 0. This is likely because the parent element of the image has not been styled to have a set height.
+[00:26:58.249] Server  LOG     ✓ Compiled in 312ms
+[00:28:01.041] Server  LOG     ✓ Compiled in 719ms
+[00:28:28.752] Server  LOG     ✓ Compiled in 83ms
+[00:29:01.427] Server  LOG     ✓ Compiled in 58ms
+[00:37:40.806] Server  LOG     ✓ Compiled in 277ms
+[00:37:58.953] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:37:59.180] Browser WARN    Image with src "/logo-icon.png" has "fill" and a height value of 0. This is likely because the parent element of the image has not been styled to have a set height.
+[00:37:59.180] Browser WARN    Image with src "/hero-professional.png" has "fill" and a height value of 0. This is likely because the parent element of the image has not been styled to have a set height.
+[00:37:59.180] Browser WARN    Image with src "/brain-map.png" has "fill" and a height value of 0. This is likely because the parent element of the image has not been styled to have a set height.
+[00:39:13.890] Server  LOG     ✓ Compiled in 352ms
+[00:42:05.351] Server  LOG     ✓ Compiled in 1233ms
+[00:42:06.673] Server  ERROR   ⨯ "The requested resource isn't a valid image for" "/neutral_brain_background_1772584631745.png" "received" null
+[00:42:06.681] Server  ERROR   ⨯ "The requested resource isn't a valid image for" "/brain_on_tablet_1772584658662.png" "received" null
+[00:55:23.419] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:55:23.425] Server  ERROR   ⨯ "The requested resource isn't a valid image for" "/brain_on_tablet_1772584658662.png" "received" null
+[00:55:23.426] Server  ERROR   ⨯ "The requested resource isn't a valid image for" "/neutral_brain_background_1772584631745.png" "received" null
+[00:55:23.637] Browser WARN    Image with src "/neutral_brain_background_1772584631745.png" has "fill" and parent element with invalid "position". Provided "static" should be one of absolute,fixed,relative.
+[00:55:23.637] Browser WARN    Image with src "/brain_on_tablet_1772584658662.png" has "fill" and a height value of 0. This is likely because the parent element of the image has not been styled to have a set height.
+[00:55:23.637] Browser WARN    Image with src "/logo-icon.png" has "fill" and a height value of 0. This is likely because the parent element of the image has not been styled to have a set height.
+[00:55:23.637] Browser WARN    Image with src "/brain-map.png" has "fill" and a height value of 0. This is likely because the parent element of the image has not been styled to have a set height.
+[00:55:23.637] Browser WARN    Image with src "/hero-professional.png" has "fill" and a height value of 0. This is likely because the parent element of the image has not been styled to have a set height.
+[02:38:17.439] Server  LOG     ✓ Compiled in 1252ms
