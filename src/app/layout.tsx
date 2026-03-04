@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { Cormorant_Garamond, DM_Sans } from 'next/font/google'
+import WhatsAppButton from '@/components/WhatsAppButton'
 import '../styles/globals.css'
 
 const cormorant = Cormorant_Garamond({
@@ -32,6 +33,7 @@ export default function RootLayout({
         <html lang="pt-BR" suppressHydrationWarning>
             <body className={`${cormorant.variable} ${dmSans.variable} grain relative antialiased`}>
                 {children}
+                <WhatsAppButton />
             </body>
         </html>
     )

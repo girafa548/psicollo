@@ -1,10 +1,13 @@
 "use client"
 
 import { Instagram, Linkedin, MessageCircle, Send } from 'lucide-react'
+import { WHATSAPP_NUMBER, CONTACT_EMAIL } from '@/lib/constants'
 
 export function Footer() {
+    const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}`
+
     return (
-        <footer className="bg-bg py-48 border-t border-surface relative overflow-hidden">
+        <footer id="contato" className="bg-bg py-48 border-t border-surface relative overflow-hidden">
             {/* Subtlest ivory detail */}
             <div className="absolute inset-0 opacity-[0.02] pointer-events-none select-none" style={{ backgroundImage: 'radial-gradient(circle at 1.5px 1.5px, #1A2E28 1px, transparent 0)', backgroundSize: '50px 50px' }} />
 
@@ -46,8 +49,8 @@ export function Footer() {
                             <h4 className="font-sans text-[11px] font-black uppercase tracking-[0.2em] text-midnight/40">Contato</h4>
                             <div className="flex flex-col gap-6 font-sans text-xl text-midnight/80">
                                 <a href="https://instagram.com/psykaoficial" target="_blank" className="hover:text-accent transition-colors">@psykaoficial</a>
-                                <a href="mailto:contato@psyka.com.br" className="hover:text-accent transition-colors">contato@psyka.com.br</a>
-                                <a href="https://wa.me/11XXXXXXXXX" className="hover:text-accent transition-colors">WhatsApp: (11) XXXXX-XXXX</a>
+                                <a href={`mailto:${CONTACT_EMAIL}`} className="hover:text-accent transition-colors">{CONTACT_EMAIL}</a>
+                                <a href={whatsappUrl} className="hover:text-accent transition-colors">WhatsApp</a>
                             </div>
                         </div>
                     </div>

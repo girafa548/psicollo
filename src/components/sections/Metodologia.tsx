@@ -49,7 +49,7 @@ export function Metodologia() {
                                     <motion.span
                                         animate={{ y: [0, -10, 0] }}
                                         transition={{ repeat: Infinity, duration: 4 + i, ease: "easeInOut" }}
-                                        className="font-display italic text-[100px] sm:text-[130px] lg:text-[180px] text-surface block leading-none mb-4 group-hover:text-gold transition-colors opacity-100"
+                                        className="font-display italic text-[100px] sm:text-[130px] lg:text-[180px] text-midnight/5 block leading-none mb-4 group-hover:text-gold/20 transition-colors"
                                     >
                                         0{i + 1}
                                     </motion.span>
