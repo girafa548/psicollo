@@ -3,7 +3,7 @@
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { X, ChevronRight, ChevronLeft, Sparkles, BrainCircuit, Heart } from 'lucide-react'
-import { CHECKOUT_URL } from '@/lib/constants'
+import { CHECKOUT_URL, WHATSAPP_NUMBER } from '@/lib/constants'
 
 interface FunnelProps {
     isOpen: boolean;
@@ -64,7 +64,8 @@ export function Funnel({ isOpen, onClose }: FunnelProps) {
         if (funnelStep < funnelStepsContent.length - 1) {
             setFunnelStep(v => v + 1)
         } else {
-            window.location.href = CHECKOUT_URL
+            const message = `Olá Anna! Gostaria de agendar uma sessão.\n\n🎯 Objetivo: ${funnelData.objective}${funnelData.objective === 'Outro' ? ` (${funnelData.objectiveOther})` : ''}\n🚀 Urgência: ${funnelData.urgency}${funnelData.urgency === 'Outro' ? ` (${funnelData.urgencyOther})` : ''}`
+            window.location.href = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`
         }
     }
 

@@ -20,7 +20,7 @@ export default function Home() {
 
     return (
         <main className="min-h-screen bg-bg antialiased">
-            <Nav />
+            <Nav onOpenFunnel={() => setIsFunnelOpen(true)} />
             <Hero onOpenFunnel={() => setIsFunnelOpen(true)} />
             <Sobre />
             <Mapas />

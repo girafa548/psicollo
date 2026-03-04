@@ -100,9 +100,12 @@ export function Hero({ onOpenFunnel }: HeroProps) {
                             Quero entender meus padrões
                             <ArrowRight size={20} className="ml-5 transition-transform group-hover:translate-x-3 duration-500" />
                         </button>
-                        <button className="btn-outline-forest !px-12 !py-6">
+                        <a
+                            href="#mapas"
+                            className="btn-outline-forest !px-12 !py-6 flex items-center justify-center text-center"
+                        >
                             Conhecer os Mapas
-                        </button>
+                        </a>
                     </div>
                 </FadeIn>
             </div>

@@ -4,6 +4,7 @@ import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { FadeIn } from '@/components/FadeIn'
 import { ArrowRight, BadgeCheck } from 'lucide-react'
+import { WHATSAPP_NUMBER } from '@/lib/constants'
 
 // Placeholder icons (SVG)
 const FinancialIcon = () => (
@@ -26,6 +27,11 @@ const CycleIcon = () => (
 )
 
 export function Mapas() {
+    const handleMapClick = (tag: string) => {
+        const message = `Olá Anna! Vi o "${tag}" no site e gostaria de saber mais como funciona.`
+        window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`, '_blank')
+    }
+
     const mapas = [
         {
             tag: "Mapa Financeiro",
@@ -98,7 +104,10 @@ export function Mapas() {
                                     </p>
                                 </div>
 
-                                <button className="mt-12 group/btn flex items-center gap-6 font-sans text-[11px] font-black uppercase tracking-[0.2em] text-white group-hover:text-gold transition-all">
+                                <button
+                                    onClick={() => handleMapClick(mapa.tag)}
+                                    className="mt-12 group/btn flex items-center gap-6 font-sans text-[11px] font-black uppercase tracking-[0.2em] text-white group-hover:text-gold transition-all"
+                                >
                                     Explorar Mapa
                                     <div className="w-14 h-14 rounded-full border border-white/20 flex items-center justify-center group-hover/btn:bg-gold group-hover/btn:border-gold group-hover/btn:text-midnight transition-all duration-500">
                                         <ArrowRight size={18} />

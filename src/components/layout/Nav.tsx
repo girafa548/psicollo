@@ -3,10 +3,16 @@
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Menu, X } from 'lucide-react'
+import { WHATSAPP_NUMBER } from '@/lib/constants'
 
-export function Nav() {
+interface NavProps {
+    onOpenFunnel: () => void;
+}
+
+export function Nav({ onOpenFunnel }: NavProps) {
     const [scrolled, setScrolled] = useState(false)
     const [isMenuOpen, setIsMenuOpen] = useState(false)
+    const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}`
 
     useEffect(() => {
         const handleScroll = () => setScrolled(window.scrollY > 20)
@@ -41,9 +47,14 @@ export function Nav() {
                                 </a>
                             ))}
                         </div>
-                        <button className="btn-terracotta !px-10 !py-4 shadow-2xl !text-[12px] font-black">
+                        <a
+                            href={whatsappUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="btn-terracotta !px-10 !py-4 shadow-2xl !text-[12px] font-black"
+                        >
                             Agendar sessão
-                        </button>
+                        </a>
                     </div>
 
                     <button
@@ -81,12 +92,15 @@ export function Nav() {
                                     {link.label}
                                 </a>
                             ))}
-                            <button
+                            <a
+                                href={whatsappUrl}
+                                target="_blank"
+                                rel="noopener noreferrer"
                                 onClick={() => setIsMenuOpen(false)}
-                                className="btn-terracotta mt-12 !text-[12px] !py-8"
+                                className="btn-terracotta mt-12 !text-[12px] !py-8 flex items-center justify-center"
                             >
                                 Agendar sessão
-                            </button>
+                            </a>
                         </div>
                     </motion.div>
                 )}
