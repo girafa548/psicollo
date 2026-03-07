@@ -34,7 +34,7 @@ export function Mapas() {
 
     const mapas = [
         {
-            tag: "Mapa Financeiro",
+            tag: "Mapa da Escassez & Mentalidade de Valor.",
             title: "Deseja entender seu dinheiro além dos números?",
             desc: "Identifica as crenças inconscientes e comportamentos automáticos que direcionam suas decisões financeiras.",
             icon: FinancialIcon,
@@ -42,7 +42,7 @@ export function Mapas() {
             badge: null
         },
         {
-            tag: "Love Map",
+            tag: "Mapa Afetivo",
             title: "Repetindo os mesmos ciclos nos relacionamentos?",
             desc: "Mapeia seus padrões de apego, escolha e comportamento afetivo. Entenda por que atrai ou afasta as mesmas dinâmicas.",
             icon: LoveIcon,

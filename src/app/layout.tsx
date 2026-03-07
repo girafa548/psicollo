@@ -17,8 +17,8 @@ const dmSans = DM_Sans({
 })
 
 export const metadata: Metadata = {
-    title: 'psyka | Neuropsicologia & Psicoterapia Breve',
-    description: 'A sua mente já sabe o que precisa mudar. Descubra sua melhor versão através de uma abordagem humanizada e científica.',
+    title: 'psicollo | Neuropsicologia & Psicoterapia Breve',
+    description: 'Abandone o papel de passageiro do seu próprio cérebro. Mapeie seus padrões com a neurociência aplicada.',
     icons: {
         icon: '/logo-icon.png',
     }

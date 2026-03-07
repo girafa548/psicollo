@@ -32,7 +32,7 @@ export function Nav({ onOpenFunnel }: NavProps) {
             <nav className={`fixed top-0 w-full z-[200] transition-all duration-700 ${scrolled ? 'glass py-4 shadow-sm' : 'bg-transparent py-10'}`}>
                 <div className="max-w-7xl mx-auto px-8 flex items-center justify-between">
                     <a href="#" className="font-display italic text-[28px] text-midnight lowercase tracking-tight">
-                        psyka
+                        psicollo
                     </a>
 
                     <div className="hidden md:flex items-center gap-16">
@@ -76,7 +76,7 @@ export function Nav({ onOpenFunnel }: NavProps) {
                         className="fixed inset-0 bg-bg z-[300] flex flex-col p-12 md:hidden"
                     >
                         <div className="flex justify-between items-center mb-24">
-                            <span className="font-display italic text-4xl text-midnight lowercase">psyka</span>
+                            <span className="font-display italic text-4xl text-midnight lowercase">psicollo</span>
                             <button className="w-12 h-12 bg-midnight/5 rounded-full flex items-center justify-center" onClick={() => setIsMenuOpen(false)}>
                                 <X size={28} />
                             </button>

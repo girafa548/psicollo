@@ -82,14 +82,14 @@ export function Hero({ onOpenFunnel }: HeroProps) {
                     </span>
 
                     <h1 className="font-display text-5xl sm:text-6xl md:text-8xl lg:text-[100px] text-midnight mb-8 md:mb-12 leading-[1.05] tracking-tight">
-                        A sua mente <br />
-                        já sabe o que <br />
-                        <span className="italic-accent italic !text-accent opacity-100">precisa mudar.</span>
+                        Abandone o papel <br />
+                        de passageiro do <br />
+                        <span className="italic-accent italic !text-accent opacity-100">seu próprio cérebro.</span>
                     </h1>
 
-                    <p className="font-sans text-lg md:text-xl lg:text-2xl text-midnight/70 max-w-2xl mb-12 md:mb-20 leading-relaxed font-light">
-                        Psicoterapia breve e focada, guiada pela neurociência, <br className="hidden lg:block" />
-                        para quem quer entender seus padrões — e finalmente sair deles.
+                    <p className="font-sans text-lg md:text-xl lg:text-2xl text-midnight/70 max-w-4xl mb-12 md:mb-20 leading-relaxed font-light">
+                        Mapeie os padrões invisíveis que moldam sua ansiedade, seus relacionamentos <br className="hidden lg:block" />
+                        e seu sucesso profissional através da neurociência aplicada. Resultados reais, sem os anos de processo sem direção.
                     </p>
 
                     <div className="flex flex-col sm:flex-row gap-8 items-center lg:items-start">

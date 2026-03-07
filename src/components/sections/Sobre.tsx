@@ -49,13 +49,13 @@ export function Sobre() {
 
                     <div className="space-y-8 md:space-y-10 text-midnight/80 font-sans text-lg md:text-xl font-light leading-relaxed">
                         <p>
-                            Sou formada em Psicologia, mas passei anos fora da clínica — vivendo como nômade, trabalhando com comportamento de consumo, gestão de pessoas e como business partner no setor jurídico.
+                            Sou formada em Psicologia, mas passei anos fora da clínica vivendo como nômade e imersa no setor jurídico, onde atuei com comportamento de consumo, gestão de pessoas e como business partner.
                         </p>
                         <p>
-                            Foi lá que entendi na prática como as pessoas decidem, por que repetem padrões e o que realmente bloqueia o avanço. Comecei a estudar o funcionamento cerebral por trás das escolhas — e percebi que os mesmos mecanismos que guiam o consumo estruturam nossos relacionamentos, nossa ansiedade e nossos ciclos repetitivos.
+                            Foi lá que entendi na prática como as pessoas decidem, por que repetem padrões e o que realmente bloqueia o avanço. Comecei a estudar o funcionamento cerebral por trás das escolhas e percebi que os mesmos mecanismos que guiam o consumo estruturam nossos relacionamentos, nossa ansiedade e nossos ciclos repetitivos.
                         </p>
                         <p>
-                            Quando voltei para a clínica, trouxe esse olhar comigo. Hoje trabalho com psicoterapia breve focada em resultados reais — sem anos de processo sem direção.
+                            Quando voltei para a clínica, trouxe esse olhar comigo. Hoje, unindo a profundidade da psicanálise com a precisão da neurociência, trabalho com psicoterapia breve focada em resultados reais, sem anos de processo sem direção.
                         </p>
 
                         <div className="pt-8 md:pt-10">
