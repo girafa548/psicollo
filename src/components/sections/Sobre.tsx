@@ -29,10 +29,10 @@ export function Sobre() {
                         className="relative aspect-square md:aspect-[4/5] rounded-[80px] overflow-hidden shadow-2xl border-[1px] border-surface image-container"
                     >
                         <Image
-                            src="/hero-professional.png"
-                            alt="Anna — Neuropsicóloga"
+                            src="/hero-profissional.jpeg"
+                            alt="Anna — Psicollo"
                             fill
-                            className="object-cover grayscale hover:grayscale-0 transition-all duration-[2s] scale-110 group-hover:scale-105"
+                            className="object-cover transition-all duration-[2s] scale-110 group-hover:scale-105"
                         />
                     </motion.div>
                 </FadeIn>
